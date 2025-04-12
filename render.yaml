@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: todo-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    env:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        value: your_mongodb_atlas_connection_string
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
